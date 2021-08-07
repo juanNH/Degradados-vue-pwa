@@ -1,23 +1,12 @@
 const app = Vue.createApp({
-    data(){
-        return{
-            title:'Contador App - Vue',
-            count: 0,
-        };
-    },
-    methods:{
-        modCount(value, limit = 1){
-            if(value === 'add'){
-                this.count += limit;
-            }
-            else if(value === 'dis'){
-                this.count -= limit;
-            }
-            else{
-                console.log('Por favor no modifique el codigo');
-            }
+    data: () => ({
+        title:'Generador de degradados',
+        color1:'#000000',
+        color2:'#000000',
+    }),
+    computed: {
+        setColor(){
+            return `background:linear-gradient(to right, ${this.color1}, ${this.color2});width:100%;height:300px;`;
         },
-
-
-    }
+    },
 });

@@ -33,14 +33,30 @@
     <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-    <div id="app" class="app">
-        <h1 class="title">{{title}}</h1>
+     <div id="app">
+        <h1>{{title}}</h1>
         <hr>
-        <h3 class="count">{{count}}</h3>
+        <form>
+            <label>Color 1: <input type="color" v-model="color1"></label>
+            <label>Color 2: <input type="color" v-model="color2"></label>
+        </form>
         <hr>
-        <div class="buttons">
-            <button @click="modCount('dis')"> -1 </button>
-            <button @click="modCount('add')"> +1 </button>
+        <p>
+            HEX 1: {{color1}}
+            HEX 2: {{color2}}
+        </p>
+        <form>
+            <label>
+                <input type="text" :value="setColor">
+            </label>
+            <br>
+            <label>
+                <input type="radio" value="1" v-model="orientation"> Right
+            </label>
+        </form>
+        <hr>
+        <div :style="setColor">
+
         </div>
     </div>
     <script src="./load.js"></script>
