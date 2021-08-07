@@ -1,7 +1,7 @@
 {
-    "name": "Contador App Vue",
-    "short_name": "Contador Vue",
-    "description": "Contador App Vue es una aplicacion que forma parte del curso de Vue3 desde 0",
+    "name": "Degradados App Vue",
+    "short_name": "Degradados Vue",
+    "description": "Degradados App Vue es una aplicacion que te permite ver los degradados, como se combinan y tener el codigo en CSS",
     "background_color": "#53495e",
     "theme_color": "#41b083",
     "start_url": "./?umt_source=web_app_manifest",

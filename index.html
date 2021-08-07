@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="description" content="Generador de codigo de degradados para CSS"> 
+
     <!-- Metadata para PWA -->
     <!-- Modificar color barra de estado ANDROID -->
-    <meta name="there-color" content="#41b883">
+    <meta name="theme-color" content="#41b883">
     <!-- Optimizacion de SEO -->
     <meta name="MobileOptimized" content="width">
     <meta name="HandheldFriendly" content="true">
@@ -47,20 +48,20 @@
         </p>
         <form>
             <label>
-                <input type="text" :value="setColor">
+                <input class="value-css" type="text" :value="setColor">
             </label>
             <hr>
             <label>
-                <input type="radio" value="1" v-model.number="orientation"> Right
+                <input type="radio" value="1" v-model.number="orientation"> Derecha
             </label>
             <label>
-                <input type="radio" value="2" v-model.number="orientation"> Left
+                <input type="radio" value="2" v-model.number="orientation"> Izquierda
             </label>
             <label>
-                <input type="radio" value="3" v-model.number="orientation"> Top
+                <input type="radio" value="3" v-model.number="orientation"> Arriba
             </label>
             <label>
-                <input type="radio" value="4" v-model.number="orientation"> Bottom
+                <input type="radio" value="4" v-model.number="orientation"> Abajo
             </label>
         </form>
         <hr>
