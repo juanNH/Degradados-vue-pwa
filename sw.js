@@ -2,7 +2,9 @@ const CACHE_NAME = "v1_cache_degradados_app_vue"
 const urlsToCache = [
     "./",
     "./?umt_source=web_app_manifest",
+    "./pages/fallback.html",
     "./img/icon16.png",
+    "./styles/css.css",
     "./img/icon32.png",
     "./img/icon64.png",
     "./img/icon128.png",
@@ -60,6 +62,8 @@ self.addEventListener("fetch", (e) => {
                     return res;
                 }    
                 return fetch(e.request);
-            })
+            }).catch(
+                () => caches.match('./pages/fallback.html')
+                )
     );
 });
