@@ -1,18 +1,20 @@
-const CACHE_NAME = "v1_cache_contador_app_vue"
+const CACHE_NAME = "v1_cache_degradados_app_vue"
 const urlsToCache = [
     "./",
+    "./?umt_source=web_app_manifest",
     "./img/icon16.png",
     "./img/icon32.png",
     "./img/icon64.png",
     "./img/icon128.png",
+    "./img/icon192.png",
     "./img/icon256.png",
     "./img/icon512.png",
     "./img/icon1024.png",
     "./js/js.js",
     "./js/mountApp.js",
     "https://unpkg.com/vue@next",
-    "./css.css",
-    "https://necolas.github.io/normalize.css/8.0.1/normalize.css",
+    "./styles/css.css",
+    "manifest.json",
 ];
 
 self.addEventListener('install',e => {
