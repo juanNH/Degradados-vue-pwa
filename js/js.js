@@ -5,30 +5,37 @@ const app = Vue.createApp({
         colors:[],
         ranges:[],
         codigo:[],
-        orientation: 0,
-        disabled: 0,
-        position: '',
-        deg: 0,
+
+        linear:{
+            orientation: 0,
+            disabled: 0,
+            position: '',
+            deg: 0,
+        },
+        ellipse:{
+            width:0,
+            height:0,
+        },
     }),
     computed: {
         setColor(){
-            if(this.disabled == 1) {
-                if(this.orientation == 1) {
-                    this.position = 'to right';
-                }else if(this.orientation == 2) {
-                    this.position = 'to left';
-                }else if(this.orientation == 3) {
-                    this.position = 'to top';
-                }else if(this.orientation == 4) {
-                    this.position = 'to bottom';
+            if(this.linear.disabled == 1) {
+                if(this.linear.orientation == 1) {
+                    this.linear.position = 'to right';
+                }else if(this.linear.orientation == 2) {
+                    this.linear.position = 'to left';
+                }else if(this.linear.orientation == 3) {
+                    this.linear.position = 'to top';
+                }else if(this.linear.orientation == 4) {
+                    this.linear.position = 'to bottom';
                 }
             }else{
-                this.position = this.deg+'deg'
+                this.linear.position = this.linear.deg+'deg'
             }
             for (let i = 0; i < this.colors.length; i++){
                 this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'%'
             }
-            return `background:linear-gradient(${this.position}, ${this.codigo} );`; 
+            return `background:linear-gradient(${this.linear.position}, ${this.codigo} );`; 
         },
 
     },

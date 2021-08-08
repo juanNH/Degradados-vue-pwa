@@ -57,21 +57,21 @@
             
             <hr>
             <label>
-                <input type="checkbox" value="1" v-model.number="disabled"> Orientacion
+                <input type="checkbox" value="1" v-model.number="linear.disabled"> Orientacion
             </label>
             <label>
-                <input type="radio" value="1" v-model.number="orientation" :disabled="disabled == 0"> Derecha
+                <input type="radio" value="1" v-model.number="linear.orientation" :disabled="linear.disabled == 0"> Derecha
             </label>
             <label>
-                <input type="radio" value="2" v-model.number="orientation" :disabled="disabled == 0"> Izquierda
+                <input type="radio" value="2" v-model.number="linear.orientation" :disabled="linear.disabled == 0"> Izquierda
             </label>
             <label>
-                <input type="radio" value="3" v-model.number="orientation" :disabled="disabled == 0"> Arriba
+                <input type="radio" value="3" v-model.number="linear.orientation" :disabled="linear.disabled == 0"> Arriba
             </label>
             <label>
-                <input type="radio" value="4" v-model.number="orientation" :disabled="disabled == 0"> Abajo
+                <input type="radio" value="4" v-model.number="linear.orientation" :disabled="linear.disabled == 0"> Abajo
             </label>
-            <label>Degres: <input type="range" min="0" max="360" step="1" v-model.number='deg' :disabled="disabled ==1"></label>
+            <label>Degres: <input type="range" min="0" max="360" step="1" v-model.number='linear.deg' :disabled="linear.disabled ==1"></label>
         </form>
         <hr>
         <div :style="setColor" id="cont">
