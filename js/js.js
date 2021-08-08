@@ -2,11 +2,11 @@ const app = Vue.createApp({
     data: () => ({
         title:'Generador de degradados',
         defaultColor:'#000000',
-        color1:'#ff0000',
-        color2:'#000000',
         colors:[],
-        orientation: 4,
-        position: 'to right',
+        orientation: 0,
+        disabled: 0,
+        position: 0,
+        deg:0,
     }),
     computed: {
         setColor(){
@@ -16,7 +16,7 @@ const app = Vue.createApp({
                 this.position = 'to left';
             }else if(this.orientation == 3) {
                 this.position = 'to top';
-            }else {
+            }else if(this.orientation == 4) {
                 this.position = 'to bottom';
             }
             return `background:linear-gradient(${this.position}, ${this.colors});`;
@@ -29,10 +29,8 @@ const app = Vue.createApp({
         delColor() {
                  this.colors.pop()     
         },
-        coloresCant() {
-            for(let i=0; i<colors.length;i++) {
+        addDeg() {
 
-            }
         }
     },
 });

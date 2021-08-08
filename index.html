@@ -57,17 +57,22 @@
                 <input class="value-css" type="text" :value="setColor">
             </label>
             <hr>
+            
+            <hr>
             <label>
-                <input type="radio" value="1" v-model.number="orientation"> Derecha
+                <input type="checkbox" value="1" v-model.number="disabled"> Orientacion
             </label>
             <label>
-                <input type="radio" value="2" v-model.number="orientation"> Izquierda
+                <input type="radio" value="1" v-model.number="orientation" :disabled="disabled == 0"> Derecha
             </label>
             <label>
-                <input type="radio" value="3" v-model.number="orientation"> Arriba
+                <input type="radio" value="2" v-model.number="orientation" :disabled="disabled == 0"> Izquierda
             </label>
             <label>
-                <input type="radio" value="4" v-model.number="orientation"> Abajo
+                <input type="radio" value="3" v-model.number="orientation" :disabled="disabled == 0"> Arriba
+            </label>
+            <label>
+                <input type="radio" value="4" v-model.number="orientation" :disabled="disabled == 0"> Abajo
             </label>
         </form>
         <hr>
