@@ -3,10 +3,13 @@ const app = Vue.createApp({
         title:'Generador de degradados',
         defaultColor:'#000000',
         colors:[],
+        ranges:[],
         orientation: 0,
         disabled: 0,
-        position: 0,
-        deg:0,
+        position: '',
+        deg: 0,
+        index: 0,
+        range: 50,
     }),
     computed: {
         setColor(){
@@ -23,18 +26,20 @@ const app = Vue.createApp({
             }else{
                 this.position = 0
             }
-            return `background:linear-gradient(${this.position}, ${this.colors});`;
+            return `background:linear-gradient(${this.position}, ${this.colors});`; 
+        },
+        rangeColor() {
+            //  this.colors[index] 
         },
     },
     methods:{
-        addColor() {
-                this.colors.push(this.defaultColor)
+        addColor() { 
+            this.colors.push(this.defaultColor)
+            this.ranges.push(50+' %')
         },
         delColor() {
-                 this.colors.pop()     
+            this.colors.pop()   
+            this.ranges.pop()
         },
-        addDeg() {
-
-        }
     },
 });

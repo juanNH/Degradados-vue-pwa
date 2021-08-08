@@ -44,9 +44,14 @@
             <ul>
                 <li v-for="color,index in colors">
                    <label>Color {{index +1}}: <input type="color" v-model="colors[index]"></label>
+                   <input type="range" min="0" max="100" default="100" step="1" v-model.number="ranges[index]" >
+                  <!--
+                @click="rangeColor(index)"
+                  --> 
                 </li>
             </ul>
         </form>
+        <p v-text="ranges"> </p>
         <hr>
         <p>
             HEX 1: {{color1}}
