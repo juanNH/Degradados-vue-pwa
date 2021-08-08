@@ -4,13 +4,11 @@ const app = Vue.createApp({
         defaultColor:'#000000',
         colors:[],
         ranges:[],
+        codigo:[],
         orientation: 0,
         disabled: 0,
         position: '',
         deg: 0,
-        index: 0,
-        range: 50,
-        codigo:[],
     }),
     computed: {
         setColor(){
@@ -25,7 +23,7 @@ const app = Vue.createApp({
                     this.position = 'to bottom';
                 }
             }else{
-                this.position = 0
+                this.position = this.deg+'deg'
             }
             for (let i = 0; i < this.colors.length; i++){
                 this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'%'

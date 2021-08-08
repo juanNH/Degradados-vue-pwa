@@ -44,10 +44,7 @@
             <ul>
                 <li v-for="color,index in colors">
                    <label>Color {{index +1}}: <input type="color" v-model="colors[index]"></label>
-                   <input type="range" min="0" max="100"  step="1" v-model.number="ranges[index]" >
-                  <!--
-                @click="rangeColor(index)"
-                  --> 
+                   <label><input type="range" min="0" max="100"  step="1" v-model.number="ranges[index]"></label>
                 </li>
             </ul>
         </form>
@@ -74,6 +71,7 @@
             <label>
                 <input type="radio" value="4" v-model.number="orientation" :disabled="disabled == 0"> Abajo
             </label>
+            <label>Degres: <input type="range" min="0" max="360" step="1" v-model.number='deg' :disabled="disabled ==1"></label>
         </form>
         <hr>
         <div :style="setColor" id="cont">
