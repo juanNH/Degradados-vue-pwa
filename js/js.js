@@ -10,6 +10,7 @@ const app = Vue.createApp({
         deg: 0,
         index: 0,
         range: 50,
+        codigo:[],
     }),
     computed: {
         setColor(){
@@ -26,20 +27,22 @@ const app = Vue.createApp({
             }else{
                 this.position = 0
             }
-            return `background:linear-gradient(${this.position}, ${this.colors});`; 
+            for (let i = 0; i < this.colors.length; i++){
+                this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'%'
+            }
+            return `background:linear-gradient(${this.position}, ${this.codigo} );`; 
         },
-        rangeColor() {
-            //  this.colors[index] 
-        },
+
     },
     methods:{
         addColor() { 
             this.colors.push(this.defaultColor)
-            this.ranges.push(50+' %')
+            this.ranges.push(50)
         },
         delColor() {
             this.colors.pop()   
             this.ranges.pop()
+            this.codigo.pop()
         },
     },
 });
