@@ -38,8 +38,14 @@
         <h1>{{title}}</h1>
         <hr>
         <form>
-            <label>Color 1: <input type="color" v-model="color1"></label>
-            <label>Color 2: <input type="color" v-model="color2"></label>
+            <label @click="addColor()">Agregar un color </label>
+            <label @click="delColor()">Quitar un color </label>
+            <br>
+            <ul>
+                <li v-for="color,index in colors">
+                   <label>Color {{index +1}}: <input type="color" v-model="colors[index]"></label>
+                </li>
+            </ul>
         </form>
         <hr>
         <p>
