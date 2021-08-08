@@ -12,6 +12,7 @@ body{
 #cont{
     width: 100%;
     height: 300px;
+    margin-bottom: 100px;
 }
 .value-css{
     width: 90%;

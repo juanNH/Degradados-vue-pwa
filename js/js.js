@@ -19,7 +19,7 @@ const app = Vue.createApp({
             }else {
                 this.position = 'to bottom';
             }
-            return `background:linear-gradient(${this.position}, ${this.color1}, ${this.color2});`;
+            return `background:linear-gradient(${this.position}, ${this.colors});`;
         },
     },
     methods:{
@@ -29,5 +29,10 @@ const app = Vue.createApp({
         delColor() {
                  this.colors.pop()     
         },
+        coloresCant() {
+            for(let i=0; i<colors.length;i++) {
+
+            }
+        }
     },
 });
