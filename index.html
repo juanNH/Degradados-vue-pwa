@@ -45,7 +45,6 @@
                     <option value="3">Conica</option>>
                 </select>
             </label>
-            <p v-text="type"></p>
         </form>
         <hr>
         <form>
@@ -55,7 +54,7 @@
             <ul>
                 <li v-for="color,index in colors">
                    <label>Color {{index +1}}: <input type="color" v-model="colors[index]"></label>
-                   <label v-if="type == 1 && type == 2"><input type="range" min="0" max="100"  step="1" v-model.number="ranges[index]"></label>
+                   <label v-if="type == 1 || type == 2"><input type="range" min="0" max="100"  step="1" v-model.number="ranges[index]"></label>
                    <label v-if="type == 3"><input type="range" min="0" max="360"  step="1" v-model.number="ranges[index]" ></label>
                 </li>
             </ul>
@@ -102,8 +101,14 @@
             <p v-text="radial.height"></p>
         </form>
         <form v-if="type == 3">
-
+            <label>
+                <input class="value-css" type="text" :value="colorConico">
+            </label>
+            <br>
+            <label>giro: <input type="range" min="0.00" max="1" step="0.01" v-model.number='conica.giro'></label>
+            <br>
         </form>
+        
         <hr>
         <div :style="colorLineal" id="cont" v-if="type == 1">
 
