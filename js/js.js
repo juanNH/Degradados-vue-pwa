@@ -15,6 +15,8 @@ const app = Vue.createApp({
         radial:{
             width:50,
             height:50,
+            posX:50,
+            posY:50,
         },
     }),
     computed: {
@@ -41,7 +43,7 @@ const app = Vue.createApp({
             for (let i = 0; i < this.colors.length; i++){
                 this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'%'
             }
-            return `background:radial-gradient(${this.radial.width}% ${this.radial.height}% at 50% 50%, ${this.codigo} );`; 
+            return `background:radial-gradient(${this.radial.width}% ${this.radial.height}% at ${this.radial.posX}% ${this.radial.posY}%, ${this.codigo} );`; 
 
         },
         colorConico(){

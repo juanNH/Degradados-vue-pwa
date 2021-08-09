@@ -83,30 +83,23 @@
             </label>
             <label>Degres: <input type="range" min="0" max="360" step="1" v-model.number='linear.deg' :disabled="linear.disabled ==1"></label>
         </form>
-        <div v-if="type == 2">
+        <form v-if="type == 2">
 
             <label>
                 <input class="value-css" type="text" :value="colorRadial">
             </label>
-
+            <br>
             <label>Size X: <input type="range" min="0" max="100" step="1" v-model.number='radial.width'></label>
             <br>
             <label>Size Y: <input type="range" min="0" max="100" step="1" v-model.number='radial.height'></label>
             <br>
-            <button @click="sizeY('add')"> sumar tamaño en y</button>
+            <label>Position X: <input type="range" min="0" max="100" step="1" v-model.number='radial.posX'></label>
             <br>
-            <button @click="sizeY('dis')"> restar tamaño en y</button>
+            <label>Position Y: <input type="range" min="0" max="100" step="1" v-model.number='radial.posY'></label>
             <br>
 
-            <label @click="directionX(-1)">izquierda</label>
-            <br>
-            <label @click="directionX(1)">derecha</label>
-            <br>
-            <label @click="directionY(1)">arriba</label>
-            <br>
-            <label @click="directionY(-1)">abajo</label>
             <p v-text="radial.height"></p>
-        </div>
+        </form>
         <form v-if="type == 3">
 
         </form>
