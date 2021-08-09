@@ -38,6 +38,17 @@
         <h1>{{title}}</h1>
         <hr>
         <form>
+            <label> Tipos: 
+                <select v-model.number="type">
+                    <option value="1">Lineal</option>>
+                    <option value="2">Radial</option>>
+                    <option value="3">Conica</option>>
+                </select>
+            </label>
+            <p v-text="type"></p>
+        </form>
+        <hr>
+        <form>
             <label @click="addColor()">Agregar un color </label>
             <label @click="delColor()">Quitar un color </label>
             <br>
