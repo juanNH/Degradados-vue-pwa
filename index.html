@@ -55,7 +55,8 @@
             <ul>
                 <li v-for="color,index in colors">
                    <label>Color {{index +1}}: <input type="color" v-model="colors[index]"></label>
-                   <label><input type="range" min="0" max="100"  step="1" v-model.number="ranges[index]"></label>
+                   <label v-if="type == 1 && type == 2"><input type="range" min="0" max="100"  step="1" v-model.number="ranges[index]"></label>
+                   <label v-if="type == 3"><input type="range" min="0" max="360"  step="1" v-model.number="ranges[index]" ></label>
                 </li>
             </ul>
         </form>

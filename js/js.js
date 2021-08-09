@@ -5,7 +5,7 @@ const app = Vue.createApp({
         colors:[],
         ranges:[],
         codigo:[],
-        type: 2,
+        type: 3,
         linear:{
             orientation: 0,
             disabled: 0,
@@ -17,6 +17,11 @@ const app = Vue.createApp({
             height:50,
             posX:50,
             posY:50,
+        },
+        conica:{
+            posX:50,
+            posY:50,
+            giro:0.1,
         },
     }),
     computed: {
@@ -47,9 +52,12 @@ const app = Vue.createApp({
 
         },
         colorConico(){
-
+            for (let i = 0; i < this.colors.length; i++){
+                this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'deg'
+            }
+            return `background: conic-gradient(from ${this.conica.giro}turn at ${this.conica.posX}% ${this.conica.posY}%,${this.codigo});`; 
+            
         },
-        // radial-gradient(50% 50% at 50% 50%)${this.linear.position}
     },
     methods:{
         addColor() { 
