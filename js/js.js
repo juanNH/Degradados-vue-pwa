@@ -18,7 +18,7 @@ const app = Vue.createApp({
         },
     }),
     computed: {
-        setColor(){
+        colorLineal(){
             if(this.linear.disabled == 1) {
                 if(this.linear.orientation == 1) {
                     this.linear.position = 'to right';
@@ -35,7 +35,13 @@ const app = Vue.createApp({
             for (let i = 0; i < this.colors.length; i++){
                 this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'%'
             }
-            return `background:radial-gradient(100% 50% at 50% 50%, ${this.codigo} );`; 
+            return `background:linear-gradient(${this.linear.position}, ${this.codigo} );`; 
+        },
+        colorRadial(){
+
+        },
+        colorConico(){
+
         },
         // radial-gradient(50% 50% at 50% 50%)${this.linear.position}
     },

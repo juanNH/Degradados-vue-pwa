@@ -60,7 +60,7 @@
             </ul>
         </form>
         <hr>
-        <form>
+        <form v-if="type == 1">
             <label>
                 <input class="value-css" type="text" :value="setColor">
             </label>
@@ -84,9 +84,19 @@
             </label>
             <label>Degres: <input type="range" min="0" max="360" step="1" v-model.number='linear.deg' :disabled="linear.disabled ==1"></label>
         </form>
-        <hr>
-        <div :style="setColor" id="cont">
+        <form v-if="type == 2">
 
+        </form>
+        <form v-if="type == 3">
+
+        </form>
+        <hr>
+        <div :style="colorLineal" id="cont" v-if="type == 1">
+
+        </div>
+        <div :style="colorRadial" id="cont" v-if="type == 2">
+        </div>
+        <div :style="colorConico" id="cont" v-if="type == 3">
         </div>
     </div>
     <script src="./load.js"></script>
