@@ -13,8 +13,8 @@ const app = Vue.createApp({
             deg: 0,
         },
         radial:{
-            width:0,
-            height:0,
+            width:50,
+            height:50,
         },
     }),
     computed: {
@@ -41,7 +41,7 @@ const app = Vue.createApp({
             for (let i = 0; i < this.colors.length; i++){
                 this.codigo[i] = this.colors[i] +' '+ this.ranges[i] +'%'
             }
-            return `background:radial-gradient(${this.radial.width}% 50% at 50% 50%, ${this.codigo} );`; 
+            return `background:radial-gradient(${this.radial.width}% ${this.radial.height}% at 50% 50%, ${this.codigo} );`; 
 
         },
         colorConico(){
@@ -59,22 +59,5 @@ const app = Vue.createApp({
             this.ranges.pop()
             this.codigo.pop()
         },
-        sizeX(dato, limit = 1){
-            if(dato === 'add'){
-                this.radial.width += limit
-            }else{
-                this.radial.width -= limit
-            }
-        },
-        sizeY(num){
-
-        },
-        directionX(num){
-
-        },
-        directionY(num){
-
-        },
-        
     },
 });

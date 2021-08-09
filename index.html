@@ -89,11 +89,11 @@
                 <input class="value-css" type="text" :value="colorRadial">
             </label>
 
-            <button @click="sizeX('add')"> sumar tamaño en x</button>
+            <label>Size X: <input type="range" min="0" max="100" step="1" v-model.number='radial.width'></label>
+            <br>
+            <label>Size Y: <input type="range" min="0" max="100" step="1" v-model.number='radial.height'></label>
             <br>
             <button @click="sizeY('add')"> sumar tamaño en y</button>
-            <br>
-            <button @click="sizeX('dis')"> restar tamaño en x</button>
             <br>
             <button @click="sizeY('dis')"> restar tamaño en y</button>
             <br>
@@ -105,7 +105,7 @@
             <label @click="directionY(1)">arriba</label>
             <br>
             <label @click="directionY(-1)">abajo</label>
-            <p v-text="radial.width"></p>
+            <p v-text="radial.height"></p>
         </div>
         <form v-if="type == 3">
 
